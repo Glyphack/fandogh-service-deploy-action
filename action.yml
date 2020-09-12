@@ -1,0 +1,30 @@
+# action.yml
+name: 'deploy fandogh serivce'
+description: 'deploy image to fandogh using service.yml file'
+inputs:
+  username:
+    description: 'fandogh cloud username'
+    required: true
+  password:
+    description: 'fandogh cloud password'
+    required: true
+  image_name:
+    description: 'name of the image'
+    required: true
+  image_version:
+    description: 'version of image'
+    required: true
+  path_to_service_file:
+    description: 'path to service defention file'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.username }}
+    - ${{ inputs.password }}
+    - ${{ inputs.image_name }}
+    - ${{ inputs.image_version }}
+    - ${{ inputs.path_to_service_file }}
+    
