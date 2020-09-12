@@ -1,4 +1,5 @@
 #!/bin/sh -l
+
 username=$1
 password=$2
 image_name=$3
