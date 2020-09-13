@@ -1,5 +1,7 @@
 name: 'deploy fandogh serivce'
 description: 'deploy image to fandogh using `service.yml` file'
+icon: upload-cloud
+color: blue
 inputs:
   username:
     description: 'fandogh cloud username'
