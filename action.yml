@@ -1,6 +1,5 @@
-# action.yml
 name: 'deploy fandogh serivce'
-description: 'deploy image to fandogh using service.yml file'
+description: 'deploy image to fandogh using `service.yml` file'
 inputs:
   username:
     description: 'fandogh cloud username'
