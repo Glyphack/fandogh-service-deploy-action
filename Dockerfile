@@ -4,4 +4,4 @@ RUN pip install fandogh-cli --upgrade
 
 COPY entrypoint.sh /entrypoint.sh
 
-CMD ["sh", "/entrypoint.sh", "1", "2", "3", "4", "5"]
+ENTRYPOINT ["bash", "/entrypoint.sh", "1", "2", "3", "4", "5"]
