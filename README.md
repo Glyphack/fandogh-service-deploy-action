@@ -39,6 +39,6 @@ your `service.yml` file most specify the service image like example below:
 ```yml
 ...
 spec:
-  image: <IMAGE:VERSION>
+  image: ${IMAGE_URL}:${TAG}
 ...
 ```
