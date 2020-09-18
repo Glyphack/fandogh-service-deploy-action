@@ -2,16 +2,14 @@
 
 username=$1
 password=$2
-image_name=$3
-image_version=$4
 path_to_service_file=$5
+
+export IMAGE_URL=$3
+export IMAGE_VERSION=$4
 
 COLLECT_ERROR=True fandogh login --username $username --password $password
 
-COLLECT_ERROR=True fandogh image init --name  $image_name
-COLLECT_ERROR=True fandogh image publish --version $image_version
+COLLECT_ERROR=True fandogh image init --name  $IMAGE_URL
+COLLECT_ERROR=True fandogh image publish --version $IMAGE_VERSION
 
-sed -i "s/VERSION>/$image_version/g" $path_to_service_file
-sed -i "s/<IMAGE/$image_name/g" $path_to_service_file
-
-COLLECT_ERROR=True fandogh service apply -f $path_to_service_file
+COLLECT_ERROR=True fandogh service apply -f $path_to_service_file -p IMAGE_URL -p IMAGE_VERSION
