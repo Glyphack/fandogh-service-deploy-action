@@ -5,7 +5,7 @@ password=$2
 path_to_service_file=$5
 
 export IMAGE_URL=$3
-export IMAGE_VERSION=$4
+export IMAGE_VERSION=$GITHUB_SHA
 
 COLLECT_ERROR=True fandogh login --username $username --password $password
 
