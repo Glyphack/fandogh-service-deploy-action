@@ -7,6 +7,10 @@ path_to_service_file=$5
 export IMAGE_URL=$3
 export IMAGE_VERSION=$4
 
+if [[ -z "$IMAGE_VERSION" ]]; then
+   export IMAGE_VERSION=$GITHUB_SHA
+fi
+
 COLLECT_ERROR=True fandogh login --username $username --password $password
 
 COLLECT_ERROR=True fandogh image init --name  $IMAGE_URL
